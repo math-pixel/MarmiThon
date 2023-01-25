@@ -19,26 +19,33 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+
+  --first-color: #343b64;
+  --seconde-color: #b5838d;
+  --third-color: #e5989b;
+  --four-color: #ffb4a2;
+  --five-color: #ffcdb2;
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --color-background: var(--first-color);
+  --color-background-soft: var(--first-color);
+  --color-background-mute: var(--first-color);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
 
   --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-text: var(--seconde-color);
 
   --section-gap: 160px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
+    --color-background: var(--first-color);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
 
@@ -46,7 +53,7 @@
     --color-border-hover: var(--vt-c-divider-dark-1);
 
     --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-text: var(--seconde-color);
   }
 }
 

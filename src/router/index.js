@@ -31,14 +31,19 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       
     },
+    {
+      path: '/recette',
+      name: 'recette',
+      component: () => import('../views/RecetteView.vue')
+    },
   ]
 })
 
 router.beforeEach(async (to, from) => {
   const store = Store()
 
-  // if ( !store.isAuthenticated && to.name !== 'Signin') {
-  //   return { name: 'Signin' }
+  // if ( !store.isAuthenticated && to.matched.find(r => r.name==="auth") !== undefined) {
+  //   return { name: 'login' }
   // }
 })
 

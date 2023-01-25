@@ -16,5 +16,8 @@ export const Store = defineStore('store', {
     increment() {
       this.count++
     },
+    clickme() {
+      alert("ptdr")
+    }
   },
 })
