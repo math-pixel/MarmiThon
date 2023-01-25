@@ -14,21 +14,20 @@ export default{
     data(){
         return {
             recetteName: "",
-            textSearch:"",
-            ingredientMatch: [],
+            nbPerson:"4",
+            allIngredient: []
         }
     },
     components: {
         IngredientItem
     },
-    methods:{
-        displayIngredient(){
-            
-            this.ingredientMatch = this.store.ingredientList.filter((e) => e.alim_nom_fr.toUpperCase().includes(this.textSearch.toUpperCase()) )
-            console.log(this.ingredientMatch)
-        },
-        test(a){
-            console.log(a.alim_nom_fr)
+    methods:{  
+        AddElement(){
+
+            this.allIngredient.push({
+                name: "",
+                quantity:"",
+            })
         }
     }
 }
@@ -38,21 +37,37 @@ export default{
     <h1>page creer recettes</h1>
 
     <input type="text" v-model="recetteName" placeholder="name">
-    {{ recetteName }}
-
     
+    <input type="text" v-model="nbPerson" class="nbPersonne" pattern="[0-9]{2}">
+    {{ nbPerson }} personnes
+
+    <IngredientItem v-for="item in allIngredient" :toto="item"/>
 
 
-    <input type="text" class="searchBar" placeholder="search bar" @keyup="displayIngredient()" v-model="textSearch">
-    {{ textSearch }}
+    <button @click="AddElement()">Add ingredient</button>
+
+    <button @click="createRecette()">OK !</button>
+    {{ allIngredient }}
+
 
 </template>
 
+
+
 <style scoped>
 
-.proposition{
-    max-height: 156px;
-    overflow: scroll;
+.nbPersonne{
+    width: 50px;
+    text-align: center;
+    border-radius: 50px;
+
+    border: 1px solid var(--third-color);
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+
+    font-family: 'myFirstFont', serif;
 }
+
 
 </style>
