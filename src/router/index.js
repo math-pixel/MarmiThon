@@ -32,10 +32,41 @@ const router = createRouter({
       
     },
     {
-      path: '/recette',
+      path: '/recette/',
       name: 'recette',
-      component: () => import('../views/RecetteView.vue')
+      component: () => import('../views/RecetteView.vue'),
     },
+    {
+      path: '/creer',
+      name: 'creer',
+      component: () => import('../views/CreerRecetteView.vue')
+    },
+    {
+      path: '/voirtout',
+      name: 'voirtout',
+      component: () => import('../views/VoirtoutView.vue')
+      },
+    {
+      path: '/famille',
+      name: 'famille',
+      component: () => import('../views/FamillyView.vue')
+    },
+    {
+      path: '/planning',
+      name: 'planing',
+      component: () => import('../views/PlanningView.vue')
+    },
+    {
+      path: '/info',
+      name: 'info',
+      component: () => import('../views/InfoView.vue')
+    },
+    {
+      path: '/course',
+      name: 'course',
+      component: () => import('../views/CourseView.vue')
+    },
+    
   ]
 })
 

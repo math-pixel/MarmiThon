@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia'
 
-
 export const Store = defineStore('store', {
-  state: () => {
-    return { 
+  state: () => (
+    { 
       count: 0,
-      isAuthenticated: false
+      isAuthenticated: false,
+      ingredientList: null,
     }
-  },
+  ),
 
   // could also be defined as
   // state: () => ({ count: 0 })
@@ -18,6 +18,10 @@ export const Store = defineStore('store', {
     },
     clickme() {
       alert("ptdr")
+    },
+    async initIngredient(){
+      const res = await fetch('/aliment.json')
+      this.ingredientList = await res.json()
     }
   },
 })

@@ -1,5 +1,22 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+import { Store } from '@/stores/store.js'
+
+export default{
+  components:{
+    RouterView,
+  },
+  setup(){
+    const store = Store()
+    return {
+      // you can return the whole store instance to use it in the template
+      store,
+    }
+  },
+  created(){
+    this.store.initIngredient()
+  }
+}
 </script>
 
 <template>
