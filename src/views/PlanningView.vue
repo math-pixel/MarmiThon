@@ -30,7 +30,7 @@ export default{
     methods:{
         addRecetteToCourse(){
             this.nbRecettes++;
-            this.store.shoppingList.push({});
+            this.store.shoppingList.push(this.store.allRecette[0]);
         },
         clearShopping(){
             this.nbRecettes = 0;
@@ -39,6 +39,14 @@ export default{
         selectRecette(recette,index){
             this.store.shoppingList[index] = recette;
             console.log(this.store.shoppingList)
+        },
+        getShoppingList(){
+            this.store.shoppingList.forEach(RecetteItem => {
+                console.log(RecetteItem)
+                // RecetteItem.ingredients.forEach(ingredientItem => {
+                //     console.log(ingredientItem.id)
+                // });
+            });
         }
     }
 
