@@ -1,6 +1,7 @@
 <script>
 
 import { Store } from '@/stores/store.js'
+import { routerKey } from 'vue-router';
 import IngredientItem from "../components/IngredientItem.vue";
 
 
@@ -15,7 +16,11 @@ export default{
         return {
             recetteName: "",
             nbPerson:"4",
-            allIngredient: []
+            Ingredient: [{
+                name: "",
+                quantity:"",
+                id:"0",
+            }],
         }
     },
     components: {
@@ -23,11 +28,23 @@ export default{
     },
     methods:{  
         AddElement(){
-
-            this.allIngredient.push({
+            this.Ingredient.push({
                 name: "",
                 quantity:"",
+                id:"0",
             })
+        },
+        deleteElement(index){
+            this.Ingredient.splice(index,index)
+        },
+        createRecette(){
+            this.store.allRecette.push({
+                name: this.recetteName,
+                portion: this.nbPerson,
+                ingredients: this.Ingredient
+            })
+
+            this.$router.push({path: '/'});
         }
     }
 }
@@ -39,16 +56,18 @@ export default{
     <input type="text" v-model="recetteName" placeholder="name">
     
     <input type="text" v-model="nbPerson" class="nbPersonne" pattern="[0-9]{2}">
-    {{ nbPerson }} personnes
+     personnes
 
-    <IngredientItem v-for="item in allIngredient" :toto="item"/>
+    <IngredientItem v-for="(item,index) in Ingredient" :aliment="item" v-model:fullid="item.id" v-model:name="item.name" @delete="deleteElement(index)"/>
 
 
     <button @click="AddElement()">Add ingredient</button>
 
     <button @click="createRecette()">OK !</button>
-    {{ allIngredient }}
 
+    <!-- {{ this.store.allRecette }} -->
+
+    {{ this.ingredient }}
 
 </template>
 

@@ -3,9 +3,13 @@ import { defineStore } from 'pinia'
 export const Store = defineStore('store', {
   state: () => (
     { 
-      count: 0,
       isAuthenticated: false,
       ingredientList: null,
+      ingredientId: 1,
+
+      allRecette: [],
+
+      shoppingList:[],
     }
   ),
 
@@ -13,8 +17,8 @@ export const Store = defineStore('store', {
   // state: () => ({ count: 0 })
 
   actions: {
-    increment() {
-      this.count++
+    incrementIngredientId() {
+      this.ingredientId++
     },
     clickme() {
       alert("ptdr")
@@ -22,6 +26,11 @@ export const Store = defineStore('store', {
     async initIngredient(){
       const res = await fetch('/aliment.json')
       this.ingredientList = await res.json()
+    },
+    convertIdToNameIngredient(id){
+      ingredientList.filter((e) => {
+        console.log(e)
+      })
     }
   },
 })

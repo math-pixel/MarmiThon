@@ -4,12 +4,16 @@
             <div class="proposition">
                 <li v-for="item in ingredientMatch" @click="setIngredient(item)" :itemName="item">{{ item.alim_nom_fr }}</li>
             </div>
-            <input type="text" placeholder="Qts" v-model="toto.quantity">
-            <p>g</p>
-            <input type="button" value="delete" >
-            </div>
+            <input type="number" placeholder="Qts" v-model="aliment.quantity" pattern="[0-9]+">
+            <select name="unite" id="unite">
+                <option value="unite">Unite</option>
+                <option value="gramme">Gramme</option>
+                <option value="litre">Litre</option>
+            </select>
+            <input type="button" value="delete" @click="$emit('delete')">
+        </div>
 
-            <!-- {{ toto }} -->
+        
         
 </template>
 
@@ -38,13 +42,20 @@ export default {
             console.log(this.ingredientMatch)
         },
         setIngredient(item){
+            // alim_ssgrp_code
             this.textSearch = item.alim_nom_fr
             this.ingredientMatch = []
+            this.$emit('update:fullid', item.alim_ssgrp_code )
+            this.$emit('update:name', this.textSearch )
+            
         }
     },
-
-    props:['toto'],
-    emits:['deletedId']
+    props:{
+        aliment: String,
+        fullid: String,
+        name:String,
+    },
+    emits:['update:fullid', 'update:name']
 }
 </script>
 

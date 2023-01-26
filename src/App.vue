@@ -2,9 +2,12 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { Store } from '@/stores/store.js'
 
+import HomeItem from './components/HomeItem.vue'
+
 export default{
   components:{
     RouterView,
+    HomeItem
   },
   setup(){
     const store = Store()
@@ -20,6 +23,9 @@ export default{
 </script>
 
 <template>
+
+  <home-item></home-item>
+
   <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
@@ -32,6 +38,8 @@ export default{
       </nav>
     </div>
   </header> -->
+
+
 
   <RouterView />
 </template>

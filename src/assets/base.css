@@ -21,8 +21,9 @@
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
 
-  --first-color: #343b64;
+  --first-color: #6d6875;
   --seconde-color: #b5838d;
+  --seconde-color-dark: #a57881;
   --third-color: #e5989b;
   --four-color: #ffb4a2;
   --five-color: #ffcdb2;
@@ -38,7 +39,7 @@
   --color-border-hover: var(--vt-c-divider-light-1);
 
   --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--seconde-color);
+  --color-text: var(--four-color);
 
   --section-gap: 160px;
 }
@@ -53,7 +54,7 @@
     --color-border-hover: var(--vt-c-divider-dark-1);
 
     --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--seconde-color);
+    --color-text: var(--four-color);
   }
 }
 
@@ -65,4 +66,97 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  
+}
+
+a{
+  color: var(--color-text);
+  margin: 10px;
+}
+
+input[type=text]{
+  background-color: var(--seconde-color);
+  border: none;
+  border-radius: 50px;
+
+  text-align: center;
+  color: var(--vt-c-black-mute);
+
+  height: 30px;
+  width: 300px;
+  margin: 10px;
+  font-family: "myFirstFont";
+}
+
+input[type=button]{
+  background-color: var(--seconde-color-dark);
+  border: none;
+  border-radius: 20px;
+
+  text-align: center;
+  color: var(--vt-c-black-mute);
+
+  height: 30px;
+  width: auto;
+  margin: 10px;
+
+  padding: 6px;
+
+  font-family: "myFirstFont";
+}
+
+button{
+  background-color: var(--seconde-color-dark);
+  border: none;
+  border-radius: 20px;
+
+  text-align: center;
+  color: var(--vt-c-black-mute);
+
+  height: 30px;
+  width: auto;
+  margin: 10px;
+  padding: 6px;
+
+  font-family: "myFirstFont";
+}
+
+select{
+  background-color: var(--seconde-color-dark);
+  border: none;
+  border-radius: 20px;
+
+  text-align: center;
+  color: var(--vt-c-black-mute);
+
+  height: 30px;
+  width: auto;
+  margin: 10px;
+
+  padding: 6px;
+
+  font-family: "myFirstFont";
+}
+
+select option{
+  font-family: "myFirstFont";
+  color: var(--vt-c-black-mute);
+}
+
+input[type=number]{
+  background-color: var(--seconde-color-dark);
+  border: none;
+  border-radius: 20px;
+
+  text-align: center;
+  color: var(--vt-c-black-mute);
+
+  height: 30px;
+  width: auto;
+  margin: 10px;
+
+  padding: 6px;
+
+  font-family: "myFirstFont";
 }
