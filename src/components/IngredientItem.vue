@@ -1,7 +1,8 @@
 <template>
-        <div class="IngredientCarrousel">
-            <input type="text" class="searchBar" placeholder="search bar" @keyup="displayIngredient()" v-model="textSearch">
-            <div class="proposition">
+        <div class="IngredientCarrousel" >
+            <hr>
+            <input type="text" class="searchBar" placeholder="search bar" @keyup="displayIngredient()" v-model="textSearch" @click="isAuthorized=true">
+            <div class="proposition" v-if="isAuthorized">
                 <li v-for="item in ingredientMatch" @click="setIngredient(item)" :itemName="item">{{ item.alim_nom_fr }}</li>
             </div>
             <input type="number" placeholder="Qts" v-model="aliment.quantity" pattern="[0-9]+">
@@ -34,6 +35,7 @@ export default {
         return {
             textSearch:"",
             ingredientMatch: [],
+            isAuthorized: false,
         }
     },
     methods:{
@@ -61,19 +63,33 @@ export default {
 
 <style scoped>
 .proposition{
+
+    z-index: 100;
+
     position: absolute;
-    top: 100%;
+    top: 50%;
     left: 0;
+
     max-height: 156px;
     overflow-y: scroll;
     overflow-x: hidden;
+
+    width: 100%;
+
+    background-color: var(--color-background);
+    padding: 5px;
+    border-radius: 10px ;
+
+    list-style-type: none;
 }
 
 .IngredientCarrousel{
     position: relative;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-content: center;
-    flex-direction: row;
+    flex-direction: row; */
+
+    width: 40%;
 }
 </style>

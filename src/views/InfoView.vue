@@ -1,3 +1,3 @@
 <template>
-    <h1>page info</h1>
+    <h1 class="disable"> page info</h1>
 </template>

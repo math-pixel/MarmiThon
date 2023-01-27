@@ -55,12 +55,16 @@ export default{
 
     <input type="text" v-model="recetteName" placeholder="name">
     
-    <input type="text" v-model="nbPerson" class="nbPersonne" pattern="[0-9]{2}">
+    <div>
+        <input type="text" v-model="nbPerson" class="nbPersonne" pattern="[0-9]{2}">
      personnes
+    </div>
+    
 
-    <IngredientItem v-for="(item,index) in Ingredient" :aliment="item" v-model:fullid="item.id" v-model:name="item.name" @delete="deleteElement(index)"/>
+    <IngredientItem v-for="(item,index) in Ingredient" :aliment="item" v-model:fullid="item.id" v-model:name="item.name" @delete="deleteElement(index)" class="IngredientItem"/>
 
 
+    <hr class="hr">
     <button @click="AddElement()">Add ingredient</button>
 
     <button @click="createRecette()">OK !</button>
@@ -86,6 +90,14 @@ export default{
     color: var(--color-text);
 
     font-family: 'myFirstFont', serif;
+}
+
+.IngredientItem{
+    width: 100vw;
+}
+
+.hr{
+    width: 80%;
 }
 
 

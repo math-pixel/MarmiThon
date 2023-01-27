@@ -31,11 +31,20 @@ export default{
 
 <style>
 .recette_pages{
-    background-color: var(--vt-c-indigo);
+
+    list-style-type: none;
+
+    background-color: var(--seconde-color);
 
     padding: 20px;
     margin: 10px;
 
     border-radius: 50px;
+
+    color: var(--seconde-color-dark);
+}
+
+li{
+    list-style-type: none;
 }
 </style>

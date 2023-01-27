@@ -8,11 +8,26 @@
 #app {
   max-width: 1280px;
 
-  width: 100vw;
+  width: 98vw;
   height: 100vh;
 
 
   font-weight: normal;
   font-size: 1em;
   font-family: 'myFirstFont', serif;
+
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: column;
+
+  overflow-x: hidden;
+
+  text-align: center;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
 }

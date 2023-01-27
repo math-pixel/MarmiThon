@@ -21,12 +21,12 @@
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
 
-  --first-color: #6d6875;
-  --seconde-color: #b5838d;
-  --seconde-color-dark: #a57881;
-  --third-color: #e5989b;
-  --four-color: #ffb4a2;
-  --five-color: #ffcdb2;
+  --first-color: #17181a;
+  --seconde-color: #ffeda8;
+  --seconde-color-dark: #31343d;
+  --third-color: #fdaf26;
+  --four-color: #fdd329;
+  --five-color: #FAFDF6;
 }
 
 /* semantic color variables for this project */
@@ -95,7 +95,7 @@ input[type=button]{
   border-radius: 20px;
 
   text-align: center;
-  color: var(--vt-c-black-mute);
+  color: var(--five-color);
 
   height: 30px;
   width: auto;
@@ -112,7 +112,7 @@ button{
   border-radius: 20px;
 
   text-align: center;
-  color: var(--vt-c-black-mute);
+  color: var(--five-color);
 
   height: 30px;
   width: auto;
@@ -128,7 +128,7 @@ select{
   border-radius: 20px;
 
   text-align: center;
-  color: var(--vt-c-black-mute);
+  color: var(--five-color);
 
   height: 30px;
   width: auto;
@@ -141,7 +141,7 @@ select{
 
 select option{
   font-family: "myFirstFont";
-  color: var(--vt-c-black-mute);
+  color: var(--five-color);
 }
 
 input[type=number]{
@@ -150,7 +150,7 @@ input[type=number]{
   border-radius: 20px;
 
   text-align: center;
-  color: var(--vt-c-black-mute);
+  color: var(--five-color);
 
   height: 30px;
   width: auto;
@@ -159,4 +159,8 @@ input[type=number]{
   padding: 6px;
 
   font-family: "myFirstFont";
+}
+
+.disable{
+  color: #fdd32996;
 }
