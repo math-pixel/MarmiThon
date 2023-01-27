@@ -47,7 +47,7 @@ export default {
             // alim_ssgrp_code
             this.textSearch = item.alim_nom_fr
             this.ingredientMatch = []
-            this.$emit('update:fullid', item.alim_ssgrp_code )
+            this.$emit('update:fullid', item.alim_code )
             this.$emit('update:name', this.textSearch )
             
         }
@@ -66,9 +66,8 @@ export default {
 
     z-index: 100;
 
-    position: absolute;
-    top: 50%;
-    left: 0;
+    position: relative;
+
 
     max-height: 156px;
     overflow-y: scroll;

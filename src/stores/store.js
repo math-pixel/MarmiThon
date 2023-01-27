@@ -10,6 +10,8 @@ export const Store = defineStore('store', {
       allRecette: [],
 
       shoppingList:[],
+
+      shoppingListHistory:[],
     }
   ),
 
@@ -28,9 +30,11 @@ export const Store = defineStore('store', {
       this.ingredientList = await res.json()
     },
     convertIdToNameIngredient(id){
-      ingredientList.filter((e) => {
-        console.log(e)
+      // console.log("a", this.ingredientList)
+      let a = this.ingredientList.filter((e) => {
+          return id===e.alim_code ;
       })
+      return a.alim_nom_fr;
     }
   },
 })

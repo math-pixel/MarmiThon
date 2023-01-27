@@ -34,6 +34,9 @@ export default{
             this.store.shoppingList.push(this.store.allRecette[0]);
         },
         clearShopping(){
+
+            this.store.shoppingListHistory.push(this.listquantity)
+            
             this.nbRecettes = 0;
             this.store.shoppingList = [];
             this.listquantity = []
@@ -83,6 +86,8 @@ export default{
             
             console.log(this.listquantity)
             this.clearShopping()
+
+            this.$router.push("/course")
         }
     }
 
