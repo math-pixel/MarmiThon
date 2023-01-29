@@ -1,5 +1,6 @@
 <template>
-    <li v-for="i in listRecette">nom : {{ getName(i.id) }} | X {{ i.qts }}</li>
+    {{ listRecette.date }}
+    <li v-for="i in listRecette.list">nom : {{ getName(i.id) }} | X {{ i.qts }}</li>
 </template>
 
 <script>

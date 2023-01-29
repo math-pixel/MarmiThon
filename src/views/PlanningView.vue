@@ -43,7 +43,7 @@ export default{
         },
         clearShopping(){
 
-            this.store.shoppingListHistory.push(this.listquantity)
+            this.store.shoppingListHistory.push({"list": this.listquantity, "date": new Date().toJSON().slice(0, 10)})
             
             this.nbRecettes = 0;
             this.store.shoppingList = [];
