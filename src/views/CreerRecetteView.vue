@@ -4,6 +4,8 @@ import { Store } from '@/stores/store.js'
 import { routerKey } from 'vue-router';
 import IngredientItem from "../components/IngredientItem.vue";
 
+import HomeItem from '../components/HomeItem.vue'
+import ReturnItem from '../components/ReturnItem.vue'
 
 export default{
     setup(){
@@ -24,7 +26,9 @@ export default{
         }
     },
     components: {
-        IngredientItem
+        IngredientItem,
+        HomeItem,
+        ReturnItem
     },
     methods:{  
         AddElement(){
@@ -51,7 +55,11 @@ export default{
 </script>
 
 <template>
-    <h1>page creer recettes</h1>
+
+    <HomeItem></HomeItem>
+    <ReturnItem></ReturnItem>
+
+    <h1>Creer Une Recettes</h1>
 
     <input type="text" v-model="recetteName" placeholder="name">
     

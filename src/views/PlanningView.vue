@@ -1,5 +1,8 @@
 <template>
-    <h1>page planning</h1>
+
+    <ReturnItem></ReturnItem>
+
+    <h1>Organiser Mon Planning</h1>
 
     <select name="recetteSelection" id="recetteSelection" v-for="(nbRecette, index) in this.store.shoppingList" >
         <option v-for="recetteName in this.store.allRecette" @click="selectRecette(recetteName,index)">{{ recetteName.name }}</option>
@@ -14,6 +17,8 @@
 
 import { Store } from '@/stores/store.js'
 
+import ReturnItem from '../components/ReturnItem.vue'
+
 export default{
 
     setup(){
@@ -21,6 +26,9 @@ export default{
         return {
             store
         }
+    },
+    components:{
+        ReturnItem
     },
     data(){
         return {
@@ -77,7 +85,7 @@ export default{
                         shouldAddQuantity = 0
 
                     }else{
-                        console.log("add first")
+                        console.log("add first", ingredientItem.id)
                         this.listquantity.push({"id": ingredientItem.id, "qts": ingredientItem.quantity})
                     }
                     

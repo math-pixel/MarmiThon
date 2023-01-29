@@ -34,7 +34,7 @@ export const Store = defineStore('store', {
       let a = this.ingredientList.filter((e) => {
           return id===e.alim_code ;
       })
-      return a.alim_nom_fr;
+      return a[0].alim_nom_fr;
     }
   },
 })

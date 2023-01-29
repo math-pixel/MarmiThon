@@ -6,9 +6,9 @@
 .logo{
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
 
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 </style>

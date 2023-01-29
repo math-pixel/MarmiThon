@@ -1,5 +1,9 @@
 <template>
-    <h1>page recettes / voir tout</h1>
+
+    <home-item></home-item>
+    <return-item></return-item>
+
+    <h1>Mes Recettes</h1>
 
     <li v-for="item in this.store.allRecette" class="recette_pages">
         <!--    {{ item }} -->
@@ -17,6 +21,9 @@
 <script>
 import { Store } from '@/stores/store.js'
 
+import HomeItem from '../components/HomeItem.vue'
+import ReturnItem from '../components/ReturnItem.vue'
+
 
 export default{
     setup(){
@@ -26,6 +33,10 @@ export default{
       store,
     }
   },
+  components:{
+    HomeItem,
+    ReturnItem
+  }
 }
 </script>
 

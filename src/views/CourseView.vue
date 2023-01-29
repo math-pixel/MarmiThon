@@ -1,7 +1,10 @@
 <template>
-    <h1>page course</h1>
 
-    <li v-for="item in this.store.shoppingListHistory" class="recette_pages"><li v-for="i in item">{{ temp }} quantité(s): {{ i.qts }}</li></li> // faire un component
+    <return-item></return-item>
+
+    <h1>Mes Liste de Course</h1>
+
+    <li v-for="item in this.store.shoppingListHistory" class="recette_pages"><shopping-list :listRecette="item"/></li>
 
 </template>
 
@@ -9,6 +12,8 @@
 <script>
 import { Store } from '@/stores/store.js'
 
+import ShoppingList from "../components/ShoppingList.vue";
+import ReturnItem from '../components/ReturnItem.vue'
 
 export default{
     setup(){
@@ -20,10 +25,13 @@ export default{
   },
   data(){
     return {
-        temp: this.store.convertIdToNameIngredient(i.id),
+
     }
-    
-  }
+  },  
+  components: {
+    ShoppingList,
+    ReturnItem
+  }  
 }
 </script>
 

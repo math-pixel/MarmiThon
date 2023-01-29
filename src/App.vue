@@ -2,12 +2,11 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { Store } from '@/stores/store.js'
 
-import HomeItem from './components/HomeItem.vue'
+
 
 export default{
   components:{
-    RouterView,
-    HomeItem
+    RouterView
   },
   setup(){
     const store = Store()
@@ -24,7 +23,7 @@ export default{
 
 <template>
 
-  <home-item></home-item>
+  
   
 
   <!-- <header>
